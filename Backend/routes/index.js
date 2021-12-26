@@ -1,5 +1,7 @@
 module.exports = app => {
-    const tutorials = require("../controllers/product.controller.js");
+    const product = require("../controllers/product.controller.js");
+
+    const order = require("../controllers/order.controller");
     
       var router = require("express").Router();
 
@@ -15,5 +17,5 @@ module.exports = app => {
 
       router.delete("/products/:id" , product.deleteProduct);
 
-      
+      router.post("/orders" , order.createOrder);      
 }
