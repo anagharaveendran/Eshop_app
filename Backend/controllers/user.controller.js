@@ -150,7 +150,7 @@ exports.adminLogin = async(req , res) => {
 }
  catch (error) {
   console.log(error);
-  res.status(500).send("Internal Server Error Occured");
+  res.status(500).send("Internal Server error Occured");
 }
 }
 
@@ -164,7 +164,6 @@ exports.adminLogout = async (req, res) => {
 try {
 const id = req.body.id;
 const update = { isLoggedIn: false };
-
 let data = await User.findByIdAndUpdate(id, update);
 res.send({ message: "Logged Out successfully." });
 } catch(err) {
@@ -172,8 +171,4 @@ res.send({ message: "Logged Out successfully." });
       message: "User Not Found - Logout failed."
     });
 }
-}; 
-
-
-
-   
+};

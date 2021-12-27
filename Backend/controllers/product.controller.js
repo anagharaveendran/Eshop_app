@@ -2,7 +2,7 @@ const db = require("../models");
 const Product = db.product;
 
 
-  //1. Search Product - "/products"
+  
   exports.findProducts = async (req, res) => {
     try {
     const name = req.query.name;
@@ -20,7 +20,7 @@ const Product = db.product;
   };
 
 
-  //2. Get Product Categories - “/products/categories”
+ 
   exports.findProductsByCategory = async (req, res) => {
     try {
     const category = req.params.category;
@@ -38,7 +38,6 @@ const Product = db.product;
   };
   
 
-  //3. Get Product by Product ID - “/products/{id}”
   exports.findOneProduct = async (req, res) => {
     try {
     const id = req.params.id;
@@ -56,7 +55,7 @@ const Product = db.product;
     };
 
 
-   // 4. Save Product - “/products”
+  
     exports.saveProducts = async (req, res) => {
         if (!req.body.name) {
           res.status(400).send({ message: "Content can not be empty!" });
@@ -88,7 +87,7 @@ const Product = db.product;
       }}
 
 
-      //5. Update Product Details- “/products/{id}”
+      
       exports.updateProduct = async (req, res) => {
         if (!req.body) {
           return res.status(400).send({
@@ -115,7 +114,6 @@ const Product = db.product;
       };
 
 
-     //6. Delete Product “/products/{id}”
       exports.deleteProduct = async (req, res) => {
         try {
       const id = req.params.id;
@@ -134,4 +132,3 @@ const Product = db.product;
                 err.message || "Could not delete the specified course" });
           }
       };
-    

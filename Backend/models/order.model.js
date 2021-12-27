@@ -4,12 +4,13 @@ module.exports = mongoose => {
         mongoose.Schema(
           {
             _id: { type : String , required : true },
-            address: [String],
-            product: [String],
-            quantity: { type : Number, required : true},
+            address:[String],
+            product:[String],
+            quantity:{type : Number,required :true},
             user: [String],
-            __v: Number
+            __v : Number
            
+          
           },
           { timestamps: true }
         )
