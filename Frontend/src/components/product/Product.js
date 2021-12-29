@@ -17,6 +17,8 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { Route,Link,Switch} from 'react-router-dom';
+import ProductDetails from './ProductDetails'
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -116,14 +118,20 @@ export default function Product() {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant='contained'>BUY</Button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <Link to ='/product-details'><Button variant='contained'>BUY</Button></Link>&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <EditIcon/><DeleteIcon/>
       </CardActions>
+ 
     </Card>
    
-    </div>
+         <Switch>
+         <Route path = '/product-details'>
+         <ProductDetails/>
+         </Route>
+       </Switch>
+       </div>
   );
 }
